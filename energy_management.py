@@ -18,9 +18,6 @@ def main():
     st.markdown("So, Let's evaluate our model with different Evaluation metrices as the metrices provide us how effective our model is.")
     st.sidebar.markdown("Let\'s do it")
     data=pd.read_csv("https://raw.githubusercontent.com/drumilji-tech/Energy_Management/main/features_dj.csv")
-    imputer = SimpleImputer(strategy='median')
-    imputer.fit(data)
-    data = imputer.transform(data)
    
     
     @st.cache(persist=True)
@@ -28,15 +25,7 @@ def main():
         
         features = data.drop(columns='score',axis=1)
         targets = data[['score']]
-        # Create an imputer object with a median filling strategy
         
-
-        # Train on the training features
-       
-
-        # Transform both training data and testing data
-        X = imputer.transform(fea)
-        X_test = imputer.transform(test_features)
         X, X_test, y, y_test = train_test_split(features, targets, test_size = 0.3, random_state = 42)
         return X,X_test,y,y_test 
     
