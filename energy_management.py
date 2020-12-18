@@ -18,6 +18,7 @@ def main():
     st.markdown("So, Let's evaluate our model with different Evaluation metrices as the metrices provide us how effective our model is.")
     st.sidebar.markdown("Let\'s do it")
     data=pd.read_csv("https://raw.githubusercontent.com/drumilji-tech/Energy_Management/main/features_1.csv")
+    data.dropna()
     
     @st.cache(persist=True)
     def split(data):
