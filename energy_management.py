@@ -17,7 +17,7 @@ def main():
     st.sidebar.title("Machine Learning and its specifications")
     st.markdown("So, Let's evaluate our model with different Evaluation metrices as the metrices provide us how effective our model is.")
     st.sidebar.markdown("Let\'s do it")
-    data=pd.read_csv("https://raw.githubusercontent.com/drumilji-tech/Energy_Management/main/features_1.csv")
+    data=pd.read_csv("https://raw.githubusercontent.com/drumilji-tech/Energy_Management/main/features_dj.csv")
     imputer = SimpleImputer(strategy='median')
     imputer.fit(data)
     data = imputer.transform(data)
